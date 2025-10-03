@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
 import Container from "@/components/Container";
 import { useEffect, useRef, Suspense, useState } from "react";
 import styles from "@/styles/Home.module.css";
@@ -25,7 +26,7 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import VanillaTilt from "vanilla-tilt";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const aboutStats = [
   { label: "Companies worked with", value: "3+" },
@@ -33,7 +34,7 @@ const aboutStats = [
   { label: "Technologies mastered", value: "5+" },
 ];
 
-const startDate = new Date(2021,8,31);
+const startDate = new Date(2021, 8, 31);
 const endDate = new Date();
 
 const startYear = startDate.getFullYear();
@@ -41,7 +42,10 @@ const startMonth = startDate.getMonth();
 const endYear = endDate.getFullYear();
 const endMonth = endDate.getMonth();
 
-const experience =(((endYear - startYear) * 12 + (endMonth - startMonth))/12).toFixed(1);
+const experience = (
+  ((endYear - startYear) * 12 + (endMonth - startMonth)) /
+  12
+).toFixed(1);
 
 const projects = [
   {
@@ -109,12 +113,72 @@ const services = [
   },
 ];
 
+interface Job {
+  Tab: string;
+  Title: string;
+  Date: string;
+  Description: string[];
+}
+
+const jobs: Job[] = [
+  {
+    Tab: "Gammastack",
+    Title: "Sr. Solution Developer",
+    Date: "May 2025- Present",
+    Description: [
+      "Served as a Backend and DevOps Engineer across multiple projects, overseeing end-to-end development and deployment processes.",
+      "Managed and guided a team of 3-5 engineers, ensuring timely delivery of high-quality solutions to clients.",
+      "Handled multiple projects simultaneously, from development through production, successfully delivering solutions to various clients.",
+      "Assisted in onboarding and conducting interviews for prospective candidates, contributing to team growth and recruitment.",
+      "Engaged with clients regularly, participating in discussions and negotiations to align project deliverables with business requirements.",
+    ],
+  },
+  {
+    Tab: "Talent Monk",
+    Title: "Backend Developer",
+    Date: "May 2023 - January 2025",
+    Description: [
+      "Proficient in building scalable and robust server-side applications using Node.js and TypeScript.",
+      "Experienced in designing and implementing database schemas using Prisma and PostgreSQL.",
+      "Strong understanding of authentication, authorization, and security principles.",
+      "Familiar with cloud platforms like Azure for deploying and managing applications.",
+    ],
+  },
+  {
+    Tab: "Akal Infosys",
+    Title: "Fullstack Developer",
+    Date: "August 2021 - June 2023",
+    Description: [
+      "Creation and maintenance of REST APIs using Node.Js, Express and sometimes also Php and .Net .",
+      "Developement and Maintaince of Function in Sql(PostgreSQL) to resuce load while using Node.",
+      "Implementation of continuous integration and daily backups.",
+      "Creation and maintenance of Platforms Done in Angular, Angular Material, Node, PostgreSQL, RxJS, (s)css with graphics (configurable), responsiveness, and user management and configuration of general parameters.",
+    ],
+  },
+  {
+    Tab: "Mumbai First",
+    Title: "UI / UX Designer(Intern)",
+    Date: "August 2020 – Nov. 2020",
+    Description: [
+      "Assisting with the design and development of basic web pages and interfaces, using HTML, CSS, and JavaScript.",
+      "Working with Adobe Creative Suite to modify images and create engaging visual content for web and social media platforms.",
+      "Assisting with video editing, including trimming, cutting, and adding visual effects to create engaging video content.",
+      "Conducting user research and testing to gather feedback on designs, and using this feedback to iterate and improve designs.",
+    ],
+  },
+];
+
 export default function Home() {
   const refScrollContainer = useRef(null);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const [carouselApi, setCarouselApi] = useState<CarouselApi | null>(null);
   const [current, setCurrent] = useState<number>(0);
   const [count, setCount] = useState<number>(0);
+  const [activeIndex, setActiveIndex] = useState<number>(0);
+
+  // const toggle = (index: number) => {
+  //   setActiveIndex(activeIndex === index ? null : index);
+  // };
 
   // handle scroll
   useEffect(() => {
@@ -288,9 +352,24 @@ export default function Home() {
               efficiently collaborating with cross-functional teams.
             </h2> */}
             <h2 className="py-16  pb-2 text-3xl font-light leading-normal tracking-tighter text-foreground xl:text-[1.7rem]">
-              In my <span className="underline"> {experience} years as a developer</span>, I seek to train every day. I have worked writing <span className='underline'>clean and responsive codes</span>, <span className='underline'>performing continuous integration</span>, and covering backend developer roles with <span className='underline'>Node.js and Postgres</span>. I have led teams having empathy, exercising motivation to partners, and setting plans and goals together.
-              My skills also include implementing system improvements, optimizing sites, standardizing patterns, and suggesting and executing ideas that add value to the project I&apos;m working on.
-              Some of the technologies that I have trained and worked on include (but are not limited to):
+              In my{" "}
+              <span className="underline">
+                {" "}
+                {experience} years as a developer
+              </span>
+              , I seek to train every day. I have worked writing{" "}
+              <span className="underline">clean and responsive codes</span>,{" "}
+              <span className="underline">
+                performing continuous integration
+              </span>
+              , and covering backend developer roles with{" "}
+              <span className="underline">Node.js and Postgres</span>. I have
+              led teams having empathy, exercising motivation to partners, and
+              setting plans and goals together. My skills also include
+              implementing system improvements, optimizing sites, standardizing
+              patterns, and suggesting and executing ideas that add value to the
+              project I&apos;m working on. Some of the technologies that I have
+              trained and worked on include (but are not limited to):
             </h2>
             <div className="grid grid-cols-2 gap-8 xl:grid-cols-3">
               {aboutStats.map((stat) => (
@@ -311,80 +390,70 @@ export default function Home() {
         </section>
 
         {/* Projects */}
-        <section id="projects" data-scroll-section>
-          {/* Gradient */}
-          <div className="relative isolate -z-10">
-            <div
-              className="absolute inset-x-0 -top-40 transform-gpu overflow-hidden blur-[100px] sm:-top-80 lg:-top-60"
-              aria-hidden="true"
-            >
-              <div
-                className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-primary via-primary to-secondary opacity-10 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-                style={{
-                  clipPath:
-                    "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
-                }}
-              />
-            </div>
-          </div>
-          <div data-scroll data-scroll-speed=".4" className="my-64">
-            <span className="text-gradient clash-grotesk text-sm font-semibold tracking-tighter">
-              ✨ Projects
-            </span>
-            <h2 className="mt-3 text-4xl font-semibold tracking-tight tracking-tighter xl:text-6xl">
-              Streamlined digital experiences.
-            </h2>
-            <p className="mt-1.5 text-base tracking-tight text-muted-foreground xl:text-lg">
-              I&apos;ve worked on a variety of projects, from small websites to
-              large-scale web applications. Here are some of my favorites:
-            </p>
 
-            {/* Carousel */}
-            <div className="mt-14">
-              <Carousel setApi={setCarouselApi} className="w-full">
-                <CarouselContent>
-                  {projects.map((project) => (
-                    <CarouselItem key={project.title} className="md:basis-1/2">
-                      <Card id="tilt">
-                        <CardHeader className="p-0">
-                          <Link href={project.href} target="_blank" passHref>
-                            {project.image.endsWith(".webm") ? (
-                              <video
-                                src={project.image}
-                                autoPlay
-                                loop
-                                muted
-                                className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
-                              />
-                            ) : (
-                              <Image
-                                src={project.image}
-                                alt={project.title}
-                                width={600}
-                                height={300}
-                                quality={100}
-                                className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
-                              />
-                            )}
-                          </Link>
-                        </CardHeader>
-                        <CardContent className="absolute bottom-0 w-full bg-background/50 backdrop-blur">
-                          <CardTitle className="border-t border-white/5 p-4 text-base font-normal tracking-tighter">
-                            {project.description}
-                          </CardTitle>
-                        </CardContent>
-                      </Card>
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
-              </Carousel>
-              <div className="py-2 text-center text-sm text-muted-foreground">
-                <span className="font-semibold">
-                  {current} / {count}
-                </span>{" "}
-                projects
+        <section
+          id="experience"
+          data-scroll-section
+          className="bg-gray-900 px-6 py-16 text-white md:px-12"
+        >
+          <div className="mx-auto max-w-4xl">
+            {/* Section Header */}
+            <div className="mb-5" data-aos="fade-up" data-aos-duration="1000">
+              <h3 className="e-font section-title text-4xl font-semibold">
+                Experience
+              </h3>
+            </div>
+
+            <div className="flex flex-col gap-8 md:flex-row">
+              {/* Tabs */}
+              <ul className="flex gap-2 md:flex-col">
+                {jobs.map((job, index) => (
+                  <li
+                    key={job.Tab}
+                    className={`cursor-pointer rounded-l-md border-l-4 px-4 py-2 transition-colors duration-300 ${
+                      activeIndex === index
+                        ? "border-green-400 bg-gray-800 text-green-400"
+                        : "border-gray-700 text-gray-300 hover:text-green-400"
+                    }`}
+                    onClick={() => setActiveIndex(index)}
+                  >
+                    {job.Tab}
+                  </li>
+                ))}
+              </ul>
+
+              {/* Description Panel */}
+              <div className="relative flex-1">
+                <AnimatePresence mode="wait">
+                  {jobs[activeIndex] && (
+                    <motion.div
+                      key={jobs[activeIndex].Tab}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.3 }}
+                      className="min-h-[200px] rounded-md bg-gray-800 p-6"
+                    >
+                      <h4 className="mb-2 text-xl font-medium text-white">
+                        {jobs[activeIndex].Title} |{" "}
+                        <span className="text-green-400">
+                          {jobs[activeIndex].Tab}
+                        </span>
+                      </h4>
+                      <h5 className="mb-4 font-mono text-sm text-gray-400">
+                        {jobs[activeIndex].Date}
+                      </h5>
+                      {jobs[activeIndex].Description.map((desc, i) => (
+                        <p
+                          key={i}
+                          className="relative mb-2 pl-4 text-gray-300 before:absolute before:left-0 before:text-green-400 before:content-['▹']"
+                        >
+                          {desc}
+                        </p>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             </div>
           </div>

@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn, scrollTo } from "@/lib/utils";
 import { useState, useEffect } from "react";
@@ -39,7 +40,7 @@ const variants = {
 const navLinks = [
   { href: "#home", text: "Home" },
   { href: "#about", text: "About" },
-  { href: "#projects", text: "Projects" },
+  { href: "#experience", text: "Experience" },
   { href: "#services", text: "Services" },
   { href: "#contact", text: "Contact" },
 ];
@@ -83,9 +84,9 @@ export default function Container(props: ContainerProps) {
   const { children, ...customMeta } = props;
   const router = useRouter();
   const meta = {
-    title: "Wendo",
+    title: "Mayank",
     description: `Full-stack website developer and TypeScript enthusiast.`,
-    image: "/assets/logo.webp",
+    image: "/assets/logo.png",
     type: "website",
     ...customMeta,
   };
@@ -164,7 +165,13 @@ export default function Container(props: ContainerProps) {
           </button>
         </div>
         <Link href="/">
-          <span className="text-lg font-semibold">wendo</span>
+          <Image
+            src={meta.image}
+            alt="Image description"
+            width={50}
+            height={50}
+            className="rounded object-cover"
+          />
         </Link>
 
         {/* Desktop menu */}
