@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&display=swap');
+
+:root {
+  --font-serif: "EB Garamond", "Garamond", "Times New Roman", serif;
+  --color-dark: #222;
+  --color-gray: #555;
+  --color-bg-header: #f0f0f0;
+}
+
+.resume-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #525659;
+  font-family: var(--font-serif);
+  color: var(--color-dark);
+}
+
+.resume-page {
+  background-color: white;
+  width: 800px;
+  min-height: 1130px; /* roughly A4 */
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  margin-bottom: 20px;
+  padding: 40px 60px; /* Adjusted padding */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+/* Header Elements */
+.name-header {
+  font-family: var(--font-serif);
+  font-size: 36px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0 0 10px 0;
+  font-weight: 600;
+  color: #111;
+}
+
+.title-header {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  text-align: center;
+  margin: 0 0 20px 0;
+  font-weight: 600;
+  color: #333;
+}
+
+.contact-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.contact-item {
+  color: #111;
+  text-decoration: none;
+}
+
+/* Section Header Styles */
+.section-title-wrapper {
+  background-color: var(--color-bg-header);
+  text-align: center;
+  margin-bottom: 15px;
+  padding: 8px 0;
+}
+
+.section-title-wrapper h3 {
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: #111;
+}
+
+.section-title-wrapper h3 span {
+  border-bottom: 1.5px solid #111;
+  padding-bottom: 1px;
+}
+
+.double-rule {
+  border: none;
+  border-top: 2px solid #111;
+  border-bottom: 1px solid #111;
+  height: 4px; /* Space between borders */
+  margin: 15px 0 25px 0;
+}
+
+/* Job Headers with dots */
+.job-header {
+  display: flex;
+  align-items: baseline;
+  font-family: var(--font-serif);
+  font-size: 16px;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.job-title-company {
+  white-space: nowrap;
+  margin-right: 15px;
+  color: #111;
+}
+
+.job-date {
+  white-space: nowrap;
+  margin-left: 15px;
+  font-size: 14px;
+  color: var(--color-gray);
+}
+
+.leader {
+  flex-grow: 1;
+  border-bottom: 2px dotted #888;
+  position: relative;
+  /* Lift the dots up slightly */
+  bottom: 4px;
+}
+
+/* Text and Typography */
+.profile-text {
+  font-size: 15px;
+  line-height: 1.6;
+  text-align: justify;
+  margin: 0 0 20px 0;
+  color: #333;
+}
+
+.resume-container ul {
+  padding-left: 20px;
+  margin: 0 0 20px 0;
+}
+
+.resume-container li {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 6px;
+  list-style-type: none;
+  position: relative;
+  text-align: justify;
+  color: #333;
+}
+
+.bullet-item {
+  position: relative;
+  padding-left: 15px;
+}
+
+.bullet-item::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #333;
+}
+
+/* Skills Grid */
+.skills-grid-compact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.skill-item {
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+  padding: 4px 8px;
+}
+
+/* Download Button */
+.download-btn {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-family: sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  font-size: 16px;
+}
+.download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+}
+
+@media print {
+  body {
+    background-color: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .resume-container {
+    padding: 0 !important;
+  }
+  .resume-page {
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 40px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .download-btn {
+    display: none !important;
+  }
+}
+
+@page {
+  margin: 0.5rem;
+}

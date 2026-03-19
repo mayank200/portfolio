@@ -43,19 +43,22 @@ const navLinks = [
   { href: "#experience", text: "Experience" },
   { href: "#services", text: "Services" },
   { href: "#contact", text: "Contact" },
+  { href: "/resume", text: "Resume" },
 ];
 
-function handleClick(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
-  const href = e.currentTarget.getAttribute("href");
-
-  if (href && href.startsWith("#")) {
-    e.preventDefault();
-    const section = document.querySelector(href);
-    scrollTo(section);
-  }
-}
-
 function NavItem(props: NavProps) {
+  const router = useRouter();
+  const isHome = router.pathname === "/";
+  const actualHref = !isHome && props.href.startsWith("#") ? `/${props.href}` : props.href;
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    if (isHome && props.href.startsWith("#")) {
+      e.preventDefault();
+      const section = document.querySelector(props.href);
+      scrollTo(section);
+    }
+  };
+
   return (
     <motion.li
       className={props.className}
@@ -65,13 +68,13 @@ function NavItem(props: NavProps) {
       animate="visible"
       exit="hidden"
     >
-      <a
-        href={props.href}
-        onClick={handleClick}
-        className={cn(props.i === 0 && "nav-active", "nav-link")}
+      <Link
+        href={actualHref}
+        onClick={handleNavClick}
+        className={cn(props.i === 0 && isHome && "nav-active", "nav-link")}
       >
         {props.text}
-      </a>
+      </Link>
     </motion.li>
   );
 }
@@ -122,19 +125,19 @@ export default function Container(props: ContainerProps) {
         <meta content={meta.description} name="description" />
         <meta
           property="og:url"
-          content={`https://www.wendoj.codes${router.asPath}`}
+          content={`https://www.mayank.codes${router.asPath}`}
         />
         <link
           rel="canonical"
-          href={`https://www.wendoj.codes${router.asPath}`}
+          href={`https://www.mayank.codes${router.asPath}`}
         />
         <meta property="og:type" content={meta.type} />
-        <meta property="og:site_name" content="WendoJ" />
+        <meta property="og:site_name" content="Mayank" />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="WendoJ" />
+        <meta name="twitter:site" content="Mayank" />
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
@@ -228,7 +231,7 @@ export default function Container(props: ContainerProps) {
                 {/* Footer */}
                 <div className="flex min-h-fit w-full flex-col space-y-8 px-[22px] py-10">
                   <span className="text-sm text-muted-foreground">
-                    © {new Date().getFullYear()} wendo. All rights reserved.
+                    © {new Date().getFullYear()} mayank. All rights reserved.
                   </span>
                 </div>
               </div>

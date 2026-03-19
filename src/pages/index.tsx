@@ -34,7 +34,7 @@ const aboutStats = [
   { label: "Technologies mastered", value: "5+" },
 ];
 
-const startDate = new Date(2021, 8, 31);
+const startDate = new Date(2021, 4, 31);
 const endDate = new Date();
 
 const startYear = startDate.getFullYear();
@@ -76,7 +76,7 @@ const projects = [
     title: "This website",
     description: "My personal website",
     image: "/assets/portfolio.webm",
-    href: "https://github.com/wendoj/portfolio",
+    href: "https://github.com/mayank/portfolio",
   },
 ];
 
@@ -524,7 +524,7 @@ export default function Home() {
               I&apos;m currently available for freelance work and open to
               discussing new projects.
             </p>
-            <Link href="mailto:wendoj@proton.me" passHref>
+            <Link href="mailto:mayanksha200@gmail.com" passHref>
               <Button className="mt-6">Get in touch</Button>
             </Link>
           </div>
