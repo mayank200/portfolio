@@ -105,7 +105,7 @@ export const resumeData = {
       ]
     },
     {
-      title: "Game Developer(Internship)",
+      title: "Game Developer",
       company: "Belivable, Delhi",
       date: "March 2021 — April 2021",
       bullets: [

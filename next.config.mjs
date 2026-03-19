@@ -20,7 +20,7 @@ const withPWA = WithPWA({
 const config = withPWA({
   reactStrictMode: true,
   output: "export", // Forces static HTML export for GitHub Pages
-  // basePath: "/portfolio", // Matches the GitHub Pages repo name
+  basePath: process.env.GITHUB_ACTIONS ? "/portfolio" : "", // Automatically applies the repo prefix only during GitHub Actions deployments!
   images: {
     unoptimized: true // Mandatory because Next.js Image Optimization server doesn't exist on GitHub Pages!
   }
