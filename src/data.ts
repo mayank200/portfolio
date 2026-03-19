@@ -1,3 +1,11 @@
+import {
+  Code2,
+  Frame,
+  SearchCheck,
+  Eye,
+  MonitorSmartphone,
+} from "lucide-react";
+
 const startDate = new Date(2021, 4, 31);
 const endDate = new Date();
 
@@ -164,3 +172,106 @@ export const resumeData = {
     }
   ]
 };
+
+export const aboutStats = [
+  { label: "Companies worked with", value: "3+" },
+  { label: "Years of experience", value: `${Math.floor(Number(experience))}+` },
+  { label: "Technologies mastered", value: "5+" },
+];
+
+export const introData = {
+  greeting: "Hello, I'm",
+  name: "Mayank Sharma.",
+  subtitle: "An experienced full-stack website developer with a passion for crafting unique digital experiences."
+};
+
+export const aboutData = {
+  description: `In my years as a developer, I seek to train every day. I have worked writing clean and responsive codes, performing continuous integration, and covering backend developer roles with Node.js and Postgres. I have led teams having empathy, exercising motivation to partners, and setting plans and goals together. My skills also include implementing system improvements, optimizing sites, standardizing patterns, and suggesting and executing ideas that add value to the project I'm working on. Some of the technologies that I have trained and worked on include (but are not limited to):`
+};
+
+export const portfolioProjects = [
+  {
+    title: "Unqueue",
+    description: "E-commerce platform for selling digital products",
+    image: "/assets/unqueue.webm",
+    href: "https://unqueue.shop/",
+  },
+  {
+    title: "InfiniteVPS",
+    description: "High performance VPS hosting solution",
+    image: "/assets/infinitevps.webm",
+    href: "#",
+  },
+  {
+    title: "TranslateBot",
+    description: "Powerful Multilingual Translation Bot for Discord",
+    image: "/assets/translate_bot.webm",
+    href: "https://translatebot.app/",
+  },
+  {
+    title: "Wrona",
+    description: "Robotics-focused technology company",
+    image: "/assets/wrona.jpeg",
+    href: "https://www.wrona.com/",
+  },
+  {
+    title: "This website",
+    description: "My personal website",
+    image: "/assets/portfolio.webm",
+    href: "https://github.com/mayank/portfolio",
+  },
+];
+
+export const services = [
+  {
+    service: "Frontend Development",
+    description:
+      "Creating stellar user interfaces and web experiences using the latest technologies.",
+    icon: Code2,
+  },
+  {
+    service: "UX Design",
+    description:
+      "Building intuitive, user-centric designs that drive engagement and conversion.",
+    icon: Frame,
+  },
+  {
+    service: "SEO Optimization",
+    description:
+      "Enhancing your website's visibility in search engines for increased organic traffic.",
+    icon: SearchCheck,
+  },
+  {
+    service: "Responsive Design",
+    description:
+      "Designing websites that look and perform equally well on all devices and screen sizes.",
+    icon: MonitorSmartphone,
+  },
+  {
+    service: "Backend Development",
+    description:
+      "Developing robust, scalable server-side logic for a wide range of web applications.",
+    icon: Eye,
+  },
+];
+
+export interface Job {
+  Tab: string;
+  Title: string;
+  Date: string;
+  Description: string[];
+}
+
+export const jobs: Job[] = resumeData.employment.map((job) => ({
+  Tab: job.company,
+  Title: job.title,
+  Date: job.date,
+  Description: job.bullets,
+})).concat(resumeData.internships.map((job) => ({
+  Tab: job.company,
+  Title: `${job.title}(Internship)`,
+  Date: job.date,
+  Description: job.bullets,
+})));
+
+export { experience };

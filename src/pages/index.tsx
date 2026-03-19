@@ -3,14 +3,7 @@ import Container from "@/components/Container";
 import { useEffect, useRef, Suspense, useState } from "react";
 import styles from "@/styles/Home.module.css";
 import { Button } from "@/components/ui/button";
-import {
-  ChevronRight,
-  Code2,
-  Frame,
-  SearchCheck,
-  Eye,
-  MonitorSmartphone,
-} from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { TriangleDownIcon } from "@radix-ui/react-icons";
 import Spline from "@splinetool/react-spline";
 import Link from "next/link";
@@ -28,145 +21,7 @@ import {
 import VanillaTilt from "vanilla-tilt";
 import { motion, AnimatePresence } from "framer-motion";
 
-const aboutStats = [
-  { label: "Companies worked with", value: "3+" },
-  { label: "Years of experience", value: "4+" },
-  { label: "Technologies mastered", value: "5+" },
-];
-
-const startDate = new Date(2021, 4, 31);
-const endDate = new Date();
-
-const startYear = startDate.getFullYear();
-const startMonth = startDate.getMonth();
-const endYear = endDate.getFullYear();
-const endMonth = endDate.getMonth();
-
-const experience = (
-  ((endYear - startYear) * 12 + (endMonth - startMonth)) /
-  12
-).toFixed(1);
-
-const projects = [
-  {
-    title: "Unqueue",
-    description: "E-commerce platform for selling digital products",
-    image: "/assets/unqueue.webm",
-    href: "https://unqueue.shop/",
-  },
-  {
-    title: "InfiniteVPS",
-    description: "High performance VPS hosting solution",
-    image: "/assets/infinitevps.webm",
-    href: "#",
-  },
-  {
-    title: "TranslateBot",
-    description: "Powerful Multilingual Translation Bot for Discord",
-    image: "/assets/translate_bot.webm",
-    href: "https://translatebot.app/",
-  },
-  {
-    title: "Wrona",
-    description: "Robotics-focused technology company",
-    image: "/assets/wrona.jpeg",
-    href: "https://www.wrona.com/",
-  },
-  {
-    title: "This website",
-    description: "My personal website",
-    image: "/assets/portfolio.webm",
-    href: "https://github.com/mayank/portfolio",
-  },
-];
-
-const services = [
-  {
-    service: "Frontend Development",
-    description:
-      "Creating stellar user interfaces and web experiences using the latest technologies.",
-    icon: Code2,
-  },
-  {
-    service: "UX Design",
-    description:
-      "Building intuitive, user-centric designs that drive engagement and conversion.",
-    icon: Frame,
-  },
-  {
-    service: "SEO Optimization",
-    description:
-      "Enhancing your website's visibility in search engines for increased organic traffic.",
-    icon: SearchCheck,
-  },
-  {
-    service: "Responsive Design",
-    description:
-      "Designing websites that look and perform equally well on all devices and screen sizes.",
-    icon: MonitorSmartphone,
-  },
-  {
-    service: "Backend Development",
-    description:
-      "Developing robust, scalable server-side logic for a wide range of web applications.",
-    icon: Eye,
-  },
-];
-
-interface Job {
-  Tab: string;
-  Title: string;
-  Date: string;
-  Description: string[];
-}
-
-const jobs: Job[] = [
-  {
-    Tab: "Gammastack",
-    Title: "Sr. Solution Developer",
-    Date: "May 2025- Present",
-    Description: [
-      "Served as a Backend and DevOps Engineer across multiple projects, overseeing end-to-end development and deployment processes.",
-      "Managed and guided a team of 3-5 engineers, ensuring timely delivery of high-quality solutions to clients.",
-      "Handled multiple projects simultaneously, from development through production, successfully delivering solutions to various clients.",
-      "Assisted in onboarding and conducting interviews for prospective candidates, contributing to team growth and recruitment.",
-      "Engaged with clients regularly, participating in discussions and negotiations to align project deliverables with business requirements.",
-    ],
-  },
-  {
-    Tab: "Talent Monk",
-    Title: "Backend Developer",
-    Date: "May 2023 - January 2025",
-    Description: [
-      "Proficient in building scalable and robust server-side applications using Node.js and TypeScript.",
-      "Experienced in designing and implementing database schemas using Prisma and PostgreSQL.",
-      "Strong understanding of authentication, authorization, and security principles.",
-      "Familiar with cloud platforms like Azure for deploying and managing applications.",
-    ],
-  },
-  {
-    Tab: "Akal Infosys",
-    Title: "Fullstack Developer",
-    Date: "August 2021 - June 2023",
-    Description: [
-      "Creation and maintenance of REST APIs using Node.Js, Express and sometimes also Php and .Net .",
-      "Developement and Maintaince of Function in Sql(PostgreSQL) to resuce load while using Node.",
-      "Implementation of continuous integration and daily backups.",
-      "Creation and maintenance of Platforms Done in Angular, Angular Material, Node, PostgreSQL, RxJS, (s)css with graphics (configurable), responsiveness, and user management and configuration of general parameters.",
-    ],
-  },
-  {
-    Tab: "Mumbai First",
-    Title: "UI / UX Designer(Intern)",
-    Date: "August 2020 – Nov. 2020",
-    Description: [
-      "Assisting with the design and development of basic web pages and interfaces, using HTML, CSS, and JavaScript.",
-      "Working with Adobe Creative Suite to modify images and create engaging visual content for web and social media platforms.",
-      "Assisting with video editing, including trimming, cutting, and adding visual effects to create engaging video content.",
-      "Conducting user research and testing to gather feedback on designs, and using this feedback to iterate and improve designs.",
-    ],
-  },
-];
+import { aboutStats, experience, services, jobs, introData, aboutData } from "@/data";
 
 export default function Home() {
   const refScrollContainer = useRef(null);
@@ -266,8 +121,10 @@ export default function Home() {
             >
               <span className={styles.pill}>node</span>
               <span className={styles.pill}>react</span>
-              <span className={styles.pill}>typescript</span>
+              <span className={styles.pill}>TS/JS</span>
               <span className={styles.pill}>angular</span>
+              <span className={styles.pill}>SQL</span>
+              <span className={styles.pill}>DevOps</span>
             </div>
             <div>
               <h1
@@ -277,11 +134,11 @@ export default function Home() {
                 data-scroll-direction="horizontal"
               >
                 <span className="text-6xl tracking-tighter text-foreground 2xl:text-8xl">
-                  Hello, I&apos;m
+                  {introData.greeting}
                   <br />
                 </span>
                 <span className="clash-grotesk text-gradient text-4xl 2xl:text-6xl">
-                  Mayank Sharma.
+                  {introData.name}
                 </span>
               </h1>
               <p
@@ -290,8 +147,7 @@ export default function Home() {
                 data-scroll-speed=".06"
                 className="mt-1 max-w-lg tracking-tight text-muted-foreground 2xl:text-xl"
               >
-                An experienced full-stack website developer with a passion for
-                crafting unique digital experiences.
+                {introData.subtitle}
               </p>
             </div>
             <span
@@ -351,25 +207,25 @@ export default function Home() {
               prototyping, to the delivery of the final product, all while
               efficiently collaborating with cross-functional teams.
             </h2> */}
-            <h2 className="py-16  pb-2 text-3xl font-light leading-normal tracking-tighter text-foreground xl:text-[1.7rem]">
-              In my{" "}
-              <span className="underline">
-                {" "}
-                {experience} years as a developer
-              </span>
-              , I seek to train every day. I have worked writing{" "}
-              <span className="underline">clean and responsive codes</span>,{" "}
-              <span className="underline">
-                performing continuous integration
-              </span>
-              , and covering backend developer roles with{" "}
-              <span className="underline">Node.js and Postgres</span>. I have
-              led teams having empathy, exercising motivation to partners, and
-              setting plans and goals together. My skills also include
-              implementing system improvements, optimizing sites, standardizing
-              patterns, and suggesting and executing ideas that add value to the
-              project I&apos;m working on. Some of the technologies that I have
-              trained and worked on include (but are not limited to):
+            <h2 className="py-16 pb-2 text-3xl font-light leading-normal tracking-tighter text-foreground xl:text-[1.7rem]">
+              {aboutData.description.split("clean and responsive codes").map((part, i, arr) => 
+                i === 0 ? (
+                  <span key={i}>
+                    {part.split("years as a developer")[0]}
+                    <span className="underline">{experience} years as a developer</span>
+                    {part.split("years as a developer")[1]}
+                    <span className="underline">clean and responsive codes</span>
+                  </span>
+                ) : i === 1 ? (
+                  <span key={i}>
+                    {part.split("performing continuous integration")[0]}
+                    <span className="underline">performing continuous integration</span>
+                    {part.split("performing continuous integration")[1]?.split("Node.js and Postgres")[0]}
+                    <span className="underline">Node.js and Postgres</span>
+                    {part.split("performing continuous integration")[1]?.split("Node.js and Postgres")[1]}
+                  </span>
+                ) : part
+              )}
             </h2>
             <div className="grid grid-cols-2 gap-8 xl:grid-cols-3">
               {aboutStats.map((stat) => (
