@@ -2,8 +2,8 @@ import Head from "next/head";
 import Container from "@/components/Container";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
-import { resumeData } from "../data";
-import App from "../App";
+import { resumeData } from "@/data";
+import App from "@/components/App";
 
 export default function Resume() {
   return (
