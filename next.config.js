@@ -19,26 +19,11 @@ const withPWA = WithPWA({
 // @ts-ignore
 const config = withPWA({
   reactStrictMode: true,
-
-  /**
-   * If you are using `appDir` then you must comment the below `i18n` config out.
-   *
-   * @see https://github.com/vercel/next.js/issues/41980
-   */
-  i18n: {
-    locales: ["en"],
-    defaultLocale: "en",
-  },
-});
-
-const nextConfig = {
-  output: "export",
-  // If deploying to username.github.io/portfolio, you also need:
-  basePath: "/portfolio", 
+  output: "export", // Forces static HTML export for GitHub Pages
+  basePath: "/portfolio", // Matches the GitHub Pages repo name
   images: {
-     unoptimized: true // Mandatory for GitHub pages
+    unoptimized: true // Mandatory because Next.js Image Optimization server doesn't exist on GitHub Pages!
   }
-}
-module.exports = nextConfig
+});
 
 export default config;
