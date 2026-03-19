@@ -19,6 +19,8 @@ const experience = (
   12
 ).toFixed(1);
 
+export const assetPrefix = process.env.NODE_ENV === "production" ? "/portfolio" : "";
+
 export const resumeData = {
   header: {
     name: "Mayank Sharma",
@@ -193,31 +195,31 @@ export const portfolioProjects = [
   {
     title: "Unqueue",
     description: "E-commerce platform for selling digital products",
-    image: "/assets/unqueue.webm",
+    image: `${assetPrefix}/assets/unqueue.webm`,
     href: "https://unqueue.shop/",
   },
   {
     title: "InfiniteVPS",
     description: "High performance VPS hosting solution",
-    image: "/assets/infinitevps.webm",
+    image: `${assetPrefix}/assets/infinitevps.webm`,
     href: "#",
   },
   {
     title: "TranslateBot",
     description: "Powerful Multilingual Translation Bot for Discord",
-    image: "/assets/translate_bot.webm",
+    image: `${assetPrefix}/assets/translate_bot.webm`,
     href: "https://translatebot.app/",
   },
   {
     title: "Wrona",
     description: "Robotics-focused technology company",
-    image: "/assets/wrona.jpeg",
+    image: `${assetPrefix}/assets/wrona.jpeg`,
     href: "https://www.wrona.com/",
   },
   {
     title: "This website",
     description: "My personal website",
-    image: "/assets/portfolio.webm",
+    image: `${assetPrefix}/assets/portfolio.webm`,
     href: "https://github.com/mayank/portfolio",
   },
 ];

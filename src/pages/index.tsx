@@ -21,7 +21,7 @@ import {
 import VanillaTilt from "vanilla-tilt";
 import { motion, AnimatePresence } from "framer-motion";
 
-import { aboutStats, experience, services, jobs, introData, aboutData } from "@/data";
+import { aboutStats, experience, services, jobs, introData, aboutData, assetPrefix } from "@/data";
 
 export default function Home() {
   const refScrollContainer = useRef(null);
@@ -186,7 +186,7 @@ export default function Home() {
             className="mt-14 h-full w-full xl:mt-0"
           >
             <Suspense fallback={<span>Loading...</span>}>
-              <Spline scene="/assets/scene.splinecode" />
+              <Spline scene={`${assetPrefix}/assets/scene.splinecode`} />
             </Suspense>
           </div>
         </section>

@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import { useRouter } from "next/router";
 import Preloader from "@/components/Preloader";
 import styles from "@/styles/Container.module.css";
+import { assetPrefix } from "@/data";
 
 type IconProps = {
   ["data-hide"]: boolean;
@@ -89,7 +90,7 @@ export default function Container(props: ContainerProps) {
   const meta = {
     title: "Mayank",
     description: `Full-stack website developer and TypeScript enthusiast.`,
-    image: "/assets/logo.png",
+    image: `${assetPrefix}/assets/logo.png`,
     type: "website",
     ...customMeta,
   };
@@ -141,8 +142,8 @@ export default function Container(props: ContainerProps) {
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
-        <link rel="manifest" href="/manifest.json" />
-        <link rel="apple-touch-icon" href="/icon-192x192.png" />
+        <link rel="manifest" href={`${assetPrefix}/manifest.json`} />
+        <link rel="apple-touch-icon" href={`${assetPrefix}/icon-192x192.png`} />
       </Head>
       <nav
         className={cn(
