@@ -31,4 +31,14 @@ const config = withPWA({
   },
 });
 
+const nextConfig = {
+  output: "export",
+  // If deploying to username.github.io/portfolio, you also need:
+  basePath: "/portfolio", 
+  images: {
+     unoptimized: true // Mandatory for GitHub pages
+  }
+}
+module.exports = nextConfig
+
 export default config;
