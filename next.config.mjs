@@ -20,7 +20,7 @@ const withPWA = WithPWA({
 const config = withPWA({
   reactStrictMode: true,
   output: "export", // Forces static HTML export for GitHub Pages
-  basePath: "/portfolio", // Matches the GitHub Pages repo name
+  // basePath: "/portfolio", // Matches the GitHub Pages repo name
   images: {
     unoptimized: true // Mandatory because Next.js Image Optimization server doesn't exist on GitHub Pages!
   }
