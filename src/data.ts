@@ -31,7 +31,7 @@ export const resumeData = {
     email: "mayanksha200@gmail.com"
   },
   links: [
-    // { label: "Portfolio", url: "https://mayank200.github.io/resume-ui.github.io/" },
+    { label: "Portfolio", url: "https://mayank200.github.io/portfolio/" },
     { label: "LinkedIn", url: "https://www.linkedin.com/in/mayank-sharma-568915ab/" },
     { label: "Github", url: "https://github.com/mayank200" }
   ],
