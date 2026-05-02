@@ -19,7 +19,8 @@ const experience = parseFloat((
   12
 ).toFixed(1));
 
-export const assetPrefix = process.env.NODE_ENV === "production" ? "/portfolio" : "";
+export const assetPrefix =
+  process.env.NODE_ENV === "production" ? "/portfolio" : "";
 
 export const resumeData = {
  header: {
@@ -164,11 +165,12 @@ export const aboutStats = [
 export const introData = {
   greeting: "Hello, I'm",
   name: "Mayank Sharma.",
-  subtitle: "An experienced full-stack website developer with a passion for crafting unique digital experiences."
+  subtitle:
+    "An experienced full-stack website developer with a passion for crafting unique digital experiences.",
 };
 
 export const aboutData = {
-  description: `In my years as a developer, I seek to train every day. I have worked writing clean and responsive codes, performing continuous integration, and covering backend developer roles with Node.js and Postgres. I have led teams having empathy, exercising motivation to partners, and setting plans and goals together. My skills also include implementing system improvements, optimizing sites, standardizing patterns, and suggesting and executing ideas that add value to the project I'm working on. Some of the technologies that I have trained and worked on include (but are not limited to):`
+  description: `In my years as a developer, I seek to train every day. I have worked writing clean and responsive codes, performing continuous integration, and covering backend developer roles with Node.js and Postgres. I have led teams having empathy, exercising motivation to partners, and setting plans and goals together. My skills also include implementing system improvements, optimizing sites, standardizing patterns, and suggesting and executing ideas that add value to the project I'm working on. Some of the technologies that I have trained and worked on include (but are not limited to):`,
 };
 
 export const portfolioProjects = [

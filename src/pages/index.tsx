@@ -212,7 +212,7 @@ export default function Home() {
                 i === 0 ? (
                   <span key={i}>
                     {part.split("years as a developer")[0]}
-                    <span className="underline">{experience} years as a developer</span>
+                    <span className="underline" suppressHydrationWarning>{experience} years as a developer</span>
                     {part.split("years as a developer")[1]}
                     <span className="underline">clean and responsive codes</span>
                   </span>
@@ -233,7 +233,7 @@ export default function Home() {
                   key={stat.label}
                   className="flex flex-col items-center text-center xl:items-start xl:text-start"
                 >
-                  <span className="clash-grotesk text-gradient text-4xl font-semibold tracking-tight xl:text-6xl">
+                  <span className="clash-grotesk text-gradient text-4xl font-semibold tracking-tight xl:text-6xl" suppressHydrationWarning>
                     {stat.value}
                   </span>
                   <span className="tracking-tight text-muted-foreground xl:text-lg">
