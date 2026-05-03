@@ -2,191 +2,171 @@ import React from 'react';
 import { resumeData } from '@/data';
 
 function App() {
-  const handlePrint = () => {
-    window.print();
-  };
-
   return (
-    <div className="resume-container">
-      <button className="download-btn" onClick={handlePrint}>
-        Download PDF
-      </button>
-      <div className="resume-page">
-        
-        {/* Header */}
-        <div className="resume-header">
-          <h1 className="name-header">{resumeData.header.name}</h1>
-          <h2 className="title-header">{resumeData.header.title}</h2>
-          
-          <div className="contact-row">
-            <span className="contact-item">{resumeData.details.phone}</span>
-            <a className="contact-item" href={`mailto:${resumeData.details.email}`}>
-              {resumeData.details.email}
-            </a>
-          </div>
-          <div className="contact-row" style={{ marginTop: '2px', fontSize: '15px' }}>
-            {resumeData.links.map((link, idx) => (
-              <a key={idx} className="contact-item" href={link.url} target="_blank" rel="noopener noreferrer">
-                {link.label}
-              </a>
+    <>
+      <style type="text/css">
+        {`
+          @media print {
+            @page {
+              margin: 0;
+            }
+          }
+        `}
+      </style>
+      <div className="bg-white max-w-[850px] mx-auto min-h-[1100px] shadow-lg print:shadow-none p-10 md:p-14 print:px-14 print:py-12 text-black leading-snug font-serif">
+      
+      {/* Header */}
+      <div className="text-center mb-6">
+        <h1 className="text-2xl font-bold mb-1 tracking-wide">{resumeData.header.name}</h1>
+        <div className="text-[13px] flex flex-wrap justify-center gap-x-4 mb-1">
+          <span>Phone: {resumeData.details.phone}</span>
+          <span>Email: <a href={`mailto:${resumeData.details.email}`} className="text-blue-600 hover:underline">{resumeData.details.email}</a></span>
+        </div>
+        <div className="text-[13px] flex flex-wrap justify-center gap-x-4 mb-1">
+          {resumeData.links.map((link, idx) => (
+            <span key={idx}>
+              {link.label}: <a href={link.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">{link.url.replace(/^https?:\/\//, '')}</a>
+            </span>
+          ))}
+        </div>
+        <div className="text-[13px] mt-2 font-medium">
+          {resumeData.header.title.split('|').map(t => t.trim()).join(' — ')}
+        </div>
+      </div>
+
+      {/* Profile */}
+      {resumeData.profile && (
+        <div className="mb-4">
+          <h2 className="text-[15px] font-bold mb-1">Professional Summary</h2>
+          <p className="text-[13px] text-justify">{resumeData.profile}</p>
+        </div>
+      )}
+
+      {/* Technical Skills */}
+      {resumeData.technicalSkills && resumeData.technicalSkills.length > 0 && (
+        <div className="mb-4">
+          <h2 className="text-[15px] font-bold mb-1">Technical Skills</h2>
+          <div className="text-[13px]">
+            {resumeData.technicalSkills.map((skill, idx) => (
+              <div key={idx} className="mb-0.5">
+                <span className="font-bold">{skill.category}:</span> {skill.items}
+              </div>
             ))}
           </div>
-          <hr className="double-rule" />
         </div>
+      )}
 
-        {/* Single Column Body */}
-        <div className="resume-body-single">
-          
-          {/* PROFILE */}
-          {resumeData.profile && (
-            <div className="section">
-              <div className="section-title-wrapper">
-                <h3><span>PROFILE</span></h3>
+      {/* Experience */}
+      {resumeData.employment && resumeData.employment.length > 0 && (
+        <div className="mb-4">
+          <h2 className="text-[15px] font-bold mb-1">Professional Experience</h2>
+          {resumeData.employment.map((job, idx) => (
+            <div key={idx} className="mb-3">
+              <div className="flex justify-between items-baseline">
+                <span className="text-[13px] font-bold">{job.title}</span>
+                <span className="text-[13px]">{job.date}</span>
               </div>
-              <p className="profile-text">{resumeData.profile}</p>
-              <hr className="double-rule" />
-            </div>
-          )}
-
-          {/* EMPLOYMENT HISTORY */}
-          {resumeData.employment && resumeData.employment.length > 0 && (
-            <div className="section">
-              <div className="section-title-wrapper">
-                <h3><span>EMPLOYMENT HISTORY</span></h3>
-              </div>
-              {resumeData.employment.map((job, idx) => (
-                <div key={idx} className="item-block">
-                  <div className="job-header">
-                    <span className="job-title-company">
-                      &#10022; <strong>{job.title}, {job.company}</strong>
-                    </span>
-                    <div className="leader"></div>
-                    <span className="job-date">{job.date}</span>
-                  </div>
-                  <ul>
-                    {job.bullets.map((bullet, bIdx) => (
-                      <li key={bIdx} className="bullet-item">
-                        <span dangerouslySetInnerHTML={{ __html: bullet.replace(/^[•-]\s*/, '').replace(/Node\.js, TypeScript, GIT, JavaScript and Azure/g, '<strong>Node.js, TypeScript, GIT, JavaScript and Azure</strong>').replace(/team management/gi, '<strong>team management</strong>').replace(/client relationships/gi, '<strong>client relationships</strong>') }}></span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          )}
-
-          {/* EDUCATION */}
-          {resumeData.education && resumeData.education.length > 0 && (
-            <div className="section">
-              <div className="section-title-wrapper">
-                <h3><span>EDUCATION</span></h3>
-              </div>
-              {resumeData.education.map((edu, idx) => (
-                <div key={idx} className="item-block">
-                  <div className="job-header">
-                    <span className="job-title-company">
-                      &#10022; <strong>{edu.degree}</strong>, {edu.school}
-                    </span>
-                    <div className="leader"></div>
-                    <span className="job-date">{edu.date}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-
-          {/* INTERNSHIPS */}
-          {resumeData.internships && resumeData.internships.length > 0 && (
-            <div className="section">
-              <div className="section-title-wrapper">
-                <h3><span>INTERNSHIPS</span></h3>
-              </div>
-              {resumeData.internships.map((job, idx) => (
-                <div key={idx} className="item-block">
-                  <div className="job-header">
-                    <span className="job-title-company">
-                      &#10022; <strong>{job.title}, {job.company}</strong>
-                    </span>
-                    <div className="leader"></div>
-                    <span className="job-date">{job.date}</span>
-                  </div>
-                  <ul>
-                    {job.bullets.map((bullet, bIdx) => (
-                      <li key={bIdx} className="bullet-item">
-                        {bullet.replace(/^[•-]\s*/, '')}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          )}
-
-          {/* PROJECTS */}
-          {resumeData.projects && resumeData.projects.length > 0 && (
-            <div className="section">
-              <div className="section-title-wrapper">
-                <h3><span>PROJECTS</span></h3>
-              </div>
-              {resumeData.projects.map((proj, idx) => (
-                <div key={idx} className="item-block">
-                  <div className="job-header">
-                    <span className="job-title-company">
-                      &#10022; <strong>{proj.name}</strong> | {proj.tech}
-                    </span>
-                    <div className="leader"></div>
-                  </div>
-                  <ul>
-                    {proj.bullets.map((bullet, bIdx) => (
-                      <li key={bIdx} className="bullet-item">
-                        {bullet.replace(/^[•-]\s*/, '')}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          )}
-
-          {/* COURSES */}
-          {resumeData.courses && resumeData.courses.length > 0 && (
-            <div className="section">
-              <div className="section-title-wrapper">
-                <h3><span>COURSES</span></h3>
-              </div>
-              {resumeData.courses.map((course, idx) => (
-                <div key={idx} className="item-block">
-                  <div className="job-header">
-                    <span className="job-title-company">
-                      &#10022; <strong>{course.name}</strong>, {course.institution}
-                    </span>
-                    <div className="leader"></div>
-                    <span className="job-date">{course.date}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-
-          {/* TECHNICAL SKILLS */}
-          {resumeData.technicalSkills && resumeData.technicalSkills.length > 0 && (
-            <div className="section">
-              <div className="section-title-wrapper">
-                <h3><span>TECHNICAL SKILLS</span></h3>
-              </div>
-              <ul>
-                {resumeData.technicalSkills.map((skill, idx) => (
-                  <li key={idx} style={{ paddingLeft: '0', listStyleType: 'none', marginBottom: '8px' }}>
-                    <strong>{skill.category}:</strong> {skill.items}
-                  </li>
+              <div className="text-[13px] mb-1">{job.company}</div>
+              <ul className="list-disc pl-5 text-[13px] space-y-0.5 text-justify">
+                {job.bullets.map((bullet, bIdx) => (
+                  <li key={bIdx} dangerouslySetInnerHTML={{ __html: bullet.replace(/^[•-]\s*/, '') }}></li>
                 ))}
               </ul>
             </div>
-          )}
-
+          ))}
         </div>
-      </div>
+      )}
+
+      {/* Internships */}
+      {resumeData.internships && resumeData.internships.length > 0 && (
+        <div className="mb-4">
+          <h2 className="text-[15px] font-bold mb-1">Internships</h2>
+          {resumeData.internships.map((job, idx) => (
+            <div key={idx} className="mb-3">
+              <div className="flex justify-between items-baseline">
+                <span className="text-[13px] font-bold">{job.title}</span>
+                <span className="text-[13px]">{job.date}</span>
+              </div>
+              <div className="text-[13px] mb-1">{job.company}</div>
+              <ul className="list-disc pl-5 text-[13px] space-y-0.5 text-justify">
+                {job.bullets.map((bullet, bIdx) => (
+                  <li key={bIdx} dangerouslySetInnerHTML={{ __html: bullet.replace(/^[•-]\s*/, '') }}></li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Projects */}
+      {resumeData.projects && resumeData.projects.length > 0 && (
+        <div className="mb-4">
+          <h2 className="text-[15px] font-bold mb-1">Projects</h2>
+          {resumeData.projects.map((proj, idx) => (
+            <div key={idx} className="mb-3">
+              <div className="flex justify-between items-baseline mb-1">
+                <span className="text-[13px]"><span className="font-bold">{proj.name}</span> — {proj.tech}</span>
+              </div>
+              <ul className="list-disc pl-5 text-[13px] space-y-0.5 text-justify">
+                {proj.bullets.map((bullet, bIdx) => (
+                  <li key={bIdx}>{bullet.replace(/^[•-]\s*/, '')}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Education */}
+      {resumeData.education && resumeData.education.length > 0 && (
+        <div className="mb-4">
+          <h2 className="text-[15px] font-bold mb-1">Education</h2>
+          {resumeData.education.map((edu, idx) => (
+            <div key={idx} className="mb-2">
+              <div className="flex justify-between items-baseline">
+                <span className="text-[13px] font-bold">{edu.degree}</span>
+                <span className="text-[13px]">{edu.date}</span>
+              </div>
+              <div className="text-[13px]">{edu.school}</div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Courses */}
+      {resumeData.courses && resumeData.courses.length > 0 && (
+        <div className="mb-4">
+          <h2 className="text-[15px] font-bold mb-1">Courses & Training</h2>
+          {resumeData.courses.map((course, idx) => (
+            <div key={idx} className="mb-2">
+              <div className="flex justify-between items-baseline">
+                <span className="text-[13px] font-bold">{course.name}</span>
+                <span className="text-[13px]">{course.date}</span>
+              </div>
+              <div className="text-[13px]">{course.institution}</div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Certifications */}
+      {resumeData.certifications && resumeData.certifications.length > 0 && (
+        <div className="mb-4">
+          <h2 className="text-[15px] font-bold mb-1">Certifications</h2>
+          <ul className="list-disc pl-5 text-[13px] space-y-0.5">
+            {resumeData.certifications.map((cert, idx) => (
+              <li key={idx}>
+                <span className="font-bold">{cert.name}</span>
+                {cert.institution ? `, ${cert.institution}` : ''}
+                {cert.date ? ` (${cert.date})` : ''}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
     </div>
+    </>
   );
 }
 
