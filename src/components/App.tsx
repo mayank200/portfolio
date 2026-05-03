@@ -37,7 +37,7 @@ function App() {
       {/* Profile */}
       {resumeData.profile && (
         <div className="mb-4">
-          <h2 className="text-[15px] font-bold mb-1">Professional Summary</h2>
+          <h2 className="text-[15px] font-bold border-b border-black pb-1 mb-2">Professional Summary</h2>
           <p className="text-[13px] text-justify">{resumeData.profile}</p>
         </div>
       )}
@@ -45,7 +45,7 @@ function App() {
       {/* Technical Skills */}
       {resumeData.technicalSkills && resumeData.technicalSkills.length > 0 && (
         <div className="mb-4">
-          <h2 className="text-[15px] font-bold mb-1">Technical Skills</h2>
+          <h2 className="text-[15px] font-bold border-b border-black pb-1 mb-2">Technical Skills</h2>
           <div className="text-[13px]">
             {resumeData.technicalSkills.map((skill, idx) => (
               <div key={idx} className="mb-0.5">
@@ -59,7 +59,7 @@ function App() {
       {/* Experience */}
       {resumeData.employment && resumeData.employment.length > 0 && (
         <div className="mb-4">
-          <h2 className="text-[15px] font-bold mb-1">Professional Experience</h2>
+          <h2 className="text-[15px] font-bold border-b border-black pb-1 mb-2">Professional Experience</h2>
           {resumeData.employment.map((job, idx) => (
             <div key={idx} className="mb-3">
               <div className="flex justify-between items-baseline">
@@ -80,7 +80,7 @@ function App() {
       {/* Internships */}
       {resumeData.internships && resumeData.internships.length > 0 && (
         <div className="mb-4">
-          <h2 className="text-[15px] font-bold mb-1">Internships</h2>
+          <h2 className="text-[15px] font-bold border-b border-black pb-1 mb-2">Internships</h2>
           {resumeData.internships.map((job, idx) => (
             <div key={idx} className="mb-3">
               <div className="flex justify-between items-baseline">
@@ -101,7 +101,7 @@ function App() {
       {/* Projects */}
       {resumeData.projects && resumeData.projects.length > 0 && (
         <div className="mb-4">
-          <h2 className="text-[15px] font-bold mb-1">Projects</h2>
+          <h2 className="text-[15px] font-bold border-b border-black pb-1 mb-2">Projects</h2>
           {resumeData.projects.map((proj, idx) => (
             <div key={idx} className="mb-3">
               <div className="flex justify-between items-baseline mb-1">
@@ -120,7 +120,7 @@ function App() {
       {/* Education */}
       {resumeData.education && resumeData.education.length > 0 && (
         <div className="mb-4">
-          <h2 className="text-[15px] font-bold mb-1">Education</h2>
+          <h2 className="text-[15px] font-bold border-b border-black pb-1 mb-2">Education</h2>
           {resumeData.education.map((edu, idx) => (
             <div key={idx} className="mb-2">
               <div className="flex justify-between items-baseline">
@@ -136,7 +136,7 @@ function App() {
       {/* Courses */}
       {resumeData.courses && resumeData.courses.length > 0 && (
         <div className="mb-4">
-          <h2 className="text-[15px] font-bold mb-1">Courses & Training</h2>
+          <h2 className="text-[15px] font-bold border-b border-black pb-1 mb-2">Courses & Training</h2>
           {resumeData.courses.map((course, idx) => (
             <div key={idx} className="mb-2">
               <div className="flex justify-between items-baseline">
@@ -152,7 +152,7 @@ function App() {
       {/* Certifications */}
       {resumeData.certifications && resumeData.certifications.length > 0 && (
         <div className="mb-4">
-          <h2 className="text-[15px] font-bold mb-1">Certifications</h2>
+          <h2 className="text-[15px] font-bold border-b border-black pb-1 mb-2">Certifications</h2>
           <ul className="list-disc pl-5 text-[13px] space-y-0.5">
             {resumeData.certifications.map((cert, idx) => (
               <li key={idx}>
