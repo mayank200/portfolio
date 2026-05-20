@@ -38,104 +38,122 @@ export const resumeData = {
     },
     { label: "Github", url: "https://github.com/mayank200" },
   ],
-  profile: `Experienced Full Stack Engineer with over ${experience} years of expertise in architecting scalable web applications using React, Node.js, and Python. Proven track record in designing high-performance PostgreSQL databases and deploying enterprise-grade services on the Azure framework. Expert in building low-latency RESTful APIs with FastAPI and Node.js, taking complete ownership of software modules while applying advanced design patterns in Agile environments.`,
-  technicalSkills: [
+ 
+  "profile": "High-caliber Technical Lead with over 5 years of professional software engineering experience, specializing in distributed systems, advanced System Design, and Client Relationship management within Agile environments. Expert polyglot engineer proficient across Python (FastAPI), Node.js (NestJS), JavaScript, and TypeScript, with a proven track record of architecting scalable web applications using React and Next.js / Angular. Adept at managing cloud-native infrastructure at scale across AWS and Azure, deploying automated Git-managed repositories, containerizing services via Docker, and building resilient CI/CD pipelines alongside production-grade Generative AI applications (LLMs, RAG) and Postgres/MongoDB layers.",
+  "technicalSkills": [
     {
-      category: "Languages",
-      items: "JavaScript (ES6+), TypeScript, Python (Expert), SQL, HTML5, CSS3/SASS",
+      "category": "Core Technologies & Languages",
+      "items": "JavaScript, TypeScript, Python, Node.js (NestJS), FastAPI"
     },
     {
-      category: "Full Stack Development",
-      items: "React JS, Node.js, Python (FastAPI/Flask), Express.js, RESTful Web Services, Microservices Architecture",
+      "category": "Frontend & Frameworks",
+      "items": "React, Angular, Next.js, Chrome DevTools"
     },
     {
-      category: "Cloud & Frameworks",
-      items: "Azure (App Services, Functions), AWS, Docker, Kubernetes, Web Application Hosting",
+      "category": "Cloud, Infrastructure & DevOps",
+      "items": "Amazon Web Services (AWS), Microsoft Azure, Docker (Containerization), CI/CD Pipelines, Git (Version Control)"
     },
     {
-      category: "Database & ORM",
-      items: "PostgreSQL (Advanced), MySQL, Redis, PrismaORM, SQLAlchemy, Relational Data Modeling",
+      "category": "Databases & AI Architecture",
+      "items": "PostgreSQL, MongoDB, NoSQL Databases, System Design, Large Language Models (LLM), Retrieval-Augmented Generation (RAG)"
     },
     {
-      category: "Engineering Practices",
-      items: "Design Patterns, Unit Testing (Jest/PyTest), Software Integration, Debugging, CI/CD Pipelines",
-    },
-    {
-      category: "Agile & Leadership",
-      items: "Agile/Scrum, JIRA, Complete Module Ownership, Customer Coordination, Technical Decision Making",
-    },
-    {
-      category: "AI & ML (Specialized)",
-      items: "Agentic AI Workflows, LLM Integration, RAG Patterns, NLP, Machine Learning (ML)",
-    },
+      "category": "Agile & Process Leadership",
+      "items": "Agile, Team Leader, Client Relationship Management"
+    }
   ],
-  education: [
+  "education": [
     {
-      degree: "B.Tech (Computer Engineer)",
-      school: "GGSIPU, Delhi",
-      date: "July 2017 — July 2021",
-    },
+      "degree": "B.Tech (Computer Engineer)",
+      "school": "GGSIPU, Delhi",
+      "date": "July 2017 — July 2021"
+    }
   ],
-  employment: [
+  "employment": [
     {
-      title: "Sr. Solution Engineer",
-      company: "Gammastack, Bengaluru",
-      date: "May 2025 - March 2026",
-      bullets: [
-        "Architected distributed backend services for global casino environments using Node.js and Python, ensuring 99.9% availability for high-concurrency gaming modules.",
-        "Engineered high-performance data processing endpoints with FastAPI to handle real-time game state transitions and player payout logic on Azure.",
-        "Developed responsive React JS dashboards for Live Ops, integrating complex RESTful APIs to visualize massive real-time gaming datasets.",
-        "Optimized PostgreSQL relational schemas and indexing to maintain sub-second query latency for mission-critical, high-volume transactions.",
-        "Led software integration and unit testing (Jest/PyTest), applying advanced design patterns to ensure modularity across full-stack gaming solutions.",
-      ],
+      "title": "Sr. Solution Engineer",
+      "company": "Gammastack, Bengaluru",
+      "date": "May 2025 - March 2026",
+      "bullets": [
+        "Served as a Team Leader to drive technical execution and distributed System Design for enterprise core platform services using Node.js (NestJS), JavaScript, TypeScript, and Python (FastAPI).",
+        "Architected scalable cloud infrastructures across AWS and Azure, managing containerized deployments via Docker and maintaining continuous environment stability using automated CI/CD pipelines.",
+        "Developed responsive frontend modules and analytical dashboards using React, Angular, and Next.js, leveraging Chrome DevTools to eliminate runtime bottlenecks and improve application rendering.",
+        "Managed critical Client Relationship dynamics and technical delivery schedules by translating system requirements into clear operational sprints using Git version control and Agile lifecycles.",
+        "Provided hands-on technical guidance, established robust design guidelines, and unblocked engineering teams through advanced system troubleshooting and architectural scaling."
+      ]
     },
     {
-      title: "Backend Developer",
-      company: "Tallect, Bengaluru",
-      date: "July 2023 — January 2025",
-      bullets: [
-        "Designed and scaled cloud-native architectures on Azure using Python (FastAPI) and Node.js, delivering high-quality web services within Agile timelines.",
-        "Integrated Agentic AI workflows and LLM-driven features into production, utilizing Python for complex data-processing and autonomous technical decisions.",
-        "Developed modular React components and microservices, focusing on seamless communication via asynchronous messaging and software integration.",
-        "Executed end-to-end debugging and containerized deployments on Azure, ensuring the reliability of PostgreSQL-backed data pipelines.",
-        "Coordinated with customers to translate complex business needs into technical specifications for iterative Python and JavaScript-based releases.",
-      ],
+      "title": "Full Stack Developer",
+      "company": "Tallect, Bengaluru",
+      "date": "July 2023 — January 2025",
+      "bullets": [
+        "Developed and scaled cloud-native microservices on AWS and Azure platforms using TypeScript, Node.js, and Python (FastAPI), implementing resilient System Design principles.",
+        "Integrated production-grade Large Language Models (LLM) and customized Retrieval-Augmented Generation (RAG) pipelines into backend architectures, scaling performance across MongoDB and NoSQL data clusters.",
+        "Built automated CI/CD pipelines and managed stable application environments utilizing Docker containerization to accelerate delivery speed and overall execution reliability.",
+        "Designed and maintained user-facing frontend components using React and Angular, profiling network assets via Chrome DevTools to optimize client-side functionality and speed.",
+        "Collaborated within cross-functional Agile structures, tracking repository commits through Git independently while managing daily technical alignment across project components."
+      ]
     },
     {
-      title: "Full Stack Developer",
-      company: "Akal Information Systems, Delhi",
-      date: "August 2021 — July 2023",
-      bullets: [
-        "Developed full-stack web applications using React and Node.js, implementing specialized FastAPI-driven modules for real-time recruitment analytics.",
-        "Owned the design of relational PostgreSQL databases for HR systems, optimizing query performance and data integrity for high-concurrency workflows.",
-        "Built responsive, user-friendly web UIs following cross-browser design principles, translating Figma designs into production-ready React components.",
-        "Applied software engineering fundamentals and Python design patterns to build modular, testable codebases within an Agile/Scrum framework.",
-        "Mentored junior engineers on debugging best practices for Python and JavaScript, ensuring consistent execution and high-quality deliverables.",
-      ],
-    },
+      "title": "Full Stack Developer",
+      "company": "Akal Information Systems, Delhi",
+      "date": "August 2021 — July 2023",
+      "bullets": [
+        "Built full-stack web applications using React, Angular, Node.js (NestJS), and Python, delivering robust software features under strict Agile timelines.",
+        "Designed relational database schemas using PostgreSQL, ensuring optimal transactional integrity, clean data indexing strategies, and efficient query layouts.",
+        "Oversaw multi-branch Git development lifecycles, setting up simple CI/CD pipelines and utilizing Docker to build consistent running environments for software verification workflows.",
+        "Utilized Chrome DevTools to diagnose rendering performance, handle client-side exceptions, and profile web pages to achieve highly responsive layouts.",
+        "Nurtured solid Client Relationship practices by interpreting user requests, aligning delivery pipelines, and maintaining communication during iterative application deployments."
+      ]
+    }
   ],
-  internships: [
+  "internships": [
     {
-      title: "UI/UX & Front-End Developer",
-      company: "Mumbai First, Delhi",
-      date: "August 2020 — November 2020",
-      bullets: [
-        "Collaborated with project managers and business stakeholders to translate visual requirements into responsive web components using JavaScript and CSS.",
-        "Engineered website enhancements and optimized UI layouts, specifically modularizing header and footer components for improved reusability across the platform.",
-        "Managed digital asset pipelines and optimized media content for web performance, ensuring high-speed delivery for YouTube-integrated publications.",
-      ],
+      "title": "UI/UX & Front-End Developer",
+      "company": "Mumbai First, Delhi",
+      "date": "August 2020 — November 2020",
+      "bullets": [
+        "Translated visual layout specifications and UI/UX concepts into responsive, browser-optimized web modules using JavaScript and clean styling rules.",
+        "Maintained stable code versions using Git to coordinate daily code changes smoothly across development branch layers.",
+        "Leveraged Chrome DevTools to profile page layouts, optimize network asset rendering speeds, and debug client-side script performance."
+      ]
     },
     {
-      title: "Software Engineer (Game Development)",
-      company: "Believable, Delhi",
-      date: "March 2021 — April 2021",
-      bullets: [
-        "Architected and implemented modular, reusable game logic using C#, applying System Design principles to enable rapid prototyping of complex board game mechanics.",
-        "Optimized front-end performance and asset management within Unity, ensuring high frame rates and a seamless user experience across various hardware configurations.",
-        "Designed and optimized local data storage schemas to handle persistent game states, aligning with best practices for efficient data retrieval and integrity.",
-        "Collaborated with project stakeholders to translate game requirements into technical specifications, utilizing Agile practices to deliver high-quality interactive areas.",
-      ],
+      "title": "Software Engineer (Game Development)",
+      "company": "Believable, Delhi",
+      "date": "March 2021 — April 2021",
+      "bullets": [
+        "Architected modular and decoupled frontend logic modules under structured System Design patterns to support rapid feature updates.",
+        "Optimized client-side rendering loops and state management schemas to minimize compute latency and maximize operational smoothness.",
+        "Utilized Git for code branching management, collaborating within iterative development blocks to convert functional criteria into modular layout scripts."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "HUB-CRM",
+      "tech": "React, Angular, Node.js, PostgreSQL, Git, CI/CD",
+      "bullets": [
+        "Developed a centralized CRM interface to streamline user-facing workflow interactions and tracking capabilities.",
+        "Engineered high-performance Node.js backend infrastructure, deploying updates through automated Git-backed CI/CD pipelines to deliver live data insights to responsive client-side views."
+      ]
     },
+    {
+      "name": "Token System",
+      "tech": "React, Angular, Node.js, PostgreSQL, Docker",
+      "bullets": [
+        "Built a modular tracking framework featuring responsive status indicators and notification workflows.",
+        "Utilized Node.js and Docker to isolate system environments, managing secure, low-latency data transit layers over web connections."
+      ]
+    },
+    {
+      "name": "Driver Awareness System",
+      "tech": "Python, LLM, RAG, AWS, Docker",
+      "bullets": [
+        "Created an intelligent context-aware platform utilizing Python, processing complex telemetry data models through localized LLM patterns.",
+        "Integrated RAG architecture concepts to reference internal documentation, containerizing application nodes using Docker for deployment over scalable AWS structures."
+      ]
+    }
   ],
   courses: [
     {
@@ -154,46 +172,7 @@ export const resumeData = {
       date: "March 2018 — June 2025",
     },
   ],
-  projects: [
-    {
-      name: "HUB-CRM",
-      tech: "Angular, Node.js, CI(PHP), PostgreSQL",
-      bullets: [
-        "Developed a centralized CRM system to streamline job and applicant tracking.",
-        "Engineered backend infrastructure for real-time insights into employee data and workﬂow.",
-      ],
-    },
-    {
-      name: "Token System",
-      tech: "Angular, Node.js, PostgreSQL",
-      bullets: [
-        "Built ticket generation system with task tracking, notiﬁcations, and real-time status updates.",
-        "Implemented role-based notiﬁcations and modular ticket ﬂow.",
-      ],
-    },
-    {
-      name: "Driver Awareness System",
-      tech: "Python, Keras, CNN, ML",
-      bullets: [
-        "Created driver drowsiness detection system using facial recognition and motion detection.",
-        "Integrated ML-based alert mechanisms for improved safety.",
-      ],
-    },
-    {
-      name: "Handwriting to Text Conversion",
-      tech: "Python, ML",
-      bullets: [
-        "Developed OCR-based tool to convert handwritten text into digital format using CNN.",
-      ],
-    },
-    {
-      name: "Smart Plant",
-      tech: "Embedded C, Arduino",
-      bullets: [
-        "Engineered IoT solution to automate watering based on soil moisture levels.",
-      ],
-    },
-  ],
+
 };
 
 export const aboutStats = [
