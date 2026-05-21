@@ -34,7 +34,7 @@ export const resumeData = {
     { label: "Portfolio", url: "https://mayank200.github.io/portfolio/" },
     {
       label: "LinkedIn",
-      url: "https://www.linkedin.com/in/mayank-sharma-568915ab/",
+      url: "www.linkedin.com/in/mayank-sharma-engineer",
     },
     { label: "Github", url: "https://github.com/mayank200" },
   ],
