@@ -30,6 +30,7 @@ export default function Home() {
   const [current, setCurrent] = useState<number>(0);
   const [count, setCount] = useState<number>(0);
   const [activeIndex, setActiveIndex] = useState<number>(0);
+  const activeJob = jobs[activeIndex];
 
   // const toggle = (index: number) => {
   //   setActiveIndex(activeIndex === index ? null : index);
@@ -281,9 +282,9 @@ export default function Home() {
               {/* Description Panel */}
               <div className="relative flex-1">
                 <AnimatePresence mode="wait">
-                  {jobs[activeIndex] && (
+                  {activeJob && (
                     <motion.div
-                      key={jobs[activeIndex].Tab}
+                      key={activeJob.Tab}
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
@@ -291,15 +292,15 @@ export default function Home() {
                       className="min-h-[200px] rounded-md bg-gray-800 p-6"
                     >
                       <h4 className="mb-2 text-xl font-medium text-white">
-                        {jobs[activeIndex].Title} |{" "}
+                        {activeJob.Title} |{" "}
                         <span className="text-green-400">
-                          {jobs[activeIndex].Tab}
+                          {activeJob.Tab}
                         </span>
                       </h4>
                       <h5 className="mb-4 font-mono text-sm text-gray-400">
-                        {jobs[activeIndex].Date}
+                        {activeJob.Date}
                       </h5>
-                      {jobs[activeIndex].Description.map((desc, i) => (
+                      {activeJob.Description.map((desc, i) => (
                         <p
                           key={i}
                           className="relative mb-2 pl-4 text-gray-300 before:absolute before:left-0 before:text-green-400 before:content-['▹']"
