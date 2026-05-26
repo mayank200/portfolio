@@ -23,6 +23,9 @@ const config = withPWA({
   basePath: process.env.GITHUB_ACTIONS ? "/portfolio" : "", // Automatically applies the repo prefix only during GitHub Actions deployments!
   images: {
     unoptimized: true // Mandatory because Next.js Image Optimization server doesn't exist on GitHub Pages!
+  },
+  env: {
+    NEXT_PUBLIC_ASSET_PREFIX: process.env.GITHUB_ACTIONS ? "/portfolio" : "",
   }
 });
 

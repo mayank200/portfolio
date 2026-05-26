@@ -19,7 +19,7 @@ const experience = Number(
 ).toString();
 
 export const assetPrefix =
-  process.env.NODE_ENV === "production" ? "/portfolio" : "";
+  process.env.NEXT_PUBLIC_ASSET_PREFIX ?? "";
 
 export const resumeData = {
   header: {
