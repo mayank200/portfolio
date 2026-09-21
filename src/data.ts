@@ -6,7 +6,7 @@ import {
   MonitorSmartphone,
 } from "lucide-react";
 
-const startDate = new Date(2021, 3, 1);
+const startDate = new Date(2021, 7, 1);
 const endDate = new Date();
 
 const startYear = startDate.getFullYear();
@@ -24,42 +24,46 @@ export const assetPrefix =
 export const resumeData = {
   header: {
     name: "Mayank Sharma",
-    title: "Software Developer",
+    title: "Fullstack Developer",
   },
   details: {
     phone: "9650018572",
     email: "mayanksha200@gmail.com",
   },
   links: [
-    { label: "Portfolio", url: "https://mayank200.github.io/portfolio/" },
+    { label: "Portfolio", url: "portfolio-mayank200s-projects.vercel.app" },
     {
       label: "LinkedIn",
       url: "www.linkedin.com/in/mayank-sharma-engineer",
     },
     { label: "Github", url: "https://github.com/mayank200" },
   ],
- 
-  "profile": "High-caliber Technical Lead with over 5 years of professional software engineering experience, specializing in distributed systems, advanced System Design, and Client Relationship management within Agile environments. Expert polyglot engineer proficient across Python (FastAPI), Node.js (NestJS), JavaScript, and TypeScript, with a proven track record of architecting scalable web applications using React and Next.js / Angular. Adept at managing cloud-native infrastructure at scale across AWS and Azure, deploying automated Git-managed repositories, containerizing services via Docker, and building resilient CI/CD pipelines alongside production-grade Generative AI applications (LLMs, RAG) and Postgres/MongoDB layers.",
+
+"profile": "High-caliber Lead Full Stack Developer (Cloud-Native) with over 5 years of experience architecting, building, and deploying scalable distributed systems and SPAs. Expert in polyglot development with deep technical mastery across Python (FastAPI/Django), Node.js (NestJS), TypeScript, and modern Angular (16/17+) alongside React. Proven track record in designing secure REST & GraphQL APIs, orchestrating cloud-native infrastructure on Microsoft Azure (AKS, App Service, Functions, Key Vault), and implementing robust CI/CD pipelines via Azure DevOps and GitHub Actions. Adept at driving end-to-end technical solutioning, enforcing OWASP security standards, and leading Agile teams through production releases and hypercare.",
   "technicalSkills": [
     {
-      "category": "Core Technologies & Languages",
-      "items": "JavaScript, TypeScript, Python, Node.js (NestJS), FastAPI"
+      "category": "Frontend & SPA Development",
+      "items": "Angular (16/17+), TypeScript, JavaScript, RxJS, React.js, Next.js, HTML5, CSS3, Sass, Redux / Redux Toolkit, SPA Performance Optimization, State Management"
     },
     {
-      "category": "Frontend & Frameworks",
-      "items": "React, Angular, Next.js, Chrome DevTools"
+      "category": "Backend & Core Languages",
+      "items": "Python (FastAPI, Django, Flask), Node.js (NestJS), REST API Design, GraphQL, Microservices Architecture, OAuth2, JWT, Azure AD"
     },
     {
-      "category": "Cloud, Infrastructure & DevOps",
-      "items": "Amazon Web Services (AWS), Microsoft Azure, Docker (Containerization), CI/CD Pipelines, Git (Version Control)"
+      "category": "Cloud & Containerization",
+      "items": "Microsoft Azure (App Service, AKS, Functions, Key Vault), Docker, Kubernetes, Amazon Web Services (AWS)"
     },
     {
-      "category": "Databases & AI Architecture",
-      "items": "PostgreSQL, MongoDB, NoSQL Databases, System Design, Large Language Models (LLM), Retrieval-Augmented Generation (RAG)"
+      "category": "Databases & Storage",
+      "items": "Azure SQL, PostgreSQL, MySQL, Azure Blob Storage, MongoDB, TypeORM, Prisma, Data Indexing & Query Optimization"
     },
     {
-      "category": "Agile & Process Leadership",
-      "items": "Agile, Team Leader, Client Relationship Management"
+      "category": "DevOps & Security",
+      "items": "CI/CD Pipelines (Azure DevOps, GitHub Actions), OWASP Secure Coding, Automated Build & Deployment, Git, Key Vault Secrets Management"
+    },
+    {
+      "category": "Architecture & Processes",
+      "items": "Client-Server System Design, Enterprise Solutions, Code Reviews, Technical Documentation, Agile/Scrum, Production Deployments & Hypercare"
     }
   ],
   "education": [
@@ -70,28 +74,41 @@ export const resumeData = {
     }
   ],
   "employment": [
+    // {
+    //   "title": "Tech Lead",
+    //   "company": "Trianz(Contract- Sarban), Bengaluru",
+    //   "date": "June 2026 - September 2026",
+    //   "bullets": [
+    //     "Led R&D and system design to modernize a legacy Ruby application, re-architecting core backend services using Node.js, NestJS, and PostgreSQL.",
+    //     "Leveraged AI-assisted development tools to accelerate code generation, optimize refactoring, and speed up overall project delivery.",
+    //     "Managed a team of 4 engineers, defining task workflows, breaking down architectural requirements, and conducting code reviews to drive Agile releases.",
+    //     "Served as the direct client point of contact, providing structured project updates, managing technical alignment, and leading live product demos."
+    //   ]
+    // },
     {
-      "title": "Sr. Solution Engineer",
+      "title": "Sr. Full Stack / Solution Engineer (Cloud-Native)",
       "company": "Gammastack, Bengaluru",
       "date": "May 2025 - March 2026",
       "bullets": [
-        "Served as a Team Leader to drive technical execution and distributed System Design for enterprise core platform services using Node.js (NestJS), JavaScript, TypeScript, and Python (FastAPI).",
-        "Architected scalable cloud infrastructures across AWS and Azure, managing containerized deployments via Docker and maintaining continuous environment stability using automated CI/CD pipelines.",
-        "Developed responsive frontend modules and analytical dashboards using React, Angular, and Next.js, leveraging Chrome DevTools to eliminate runtime bottlenecks and improve application rendering.",
-        "Managed critical Client Relationship dynamics and technical delivery schedules by translating system requirements into clear operational sprints using Git version control and Agile lifecycles.",
-        "Provided hands-on technical guidance, established robust design guidelines, and unblocked engineering teams through advanced system troubleshooting and architectural scaling."
+        "Led technical solutioning and end-to-end architecture for cloud-native enterprise platforms, utilizing Python (FastAPI) and Node.js (NestJS) for scalable backend microservices.",
+        "Architected modern, responsive Single Page Applications (SPAs) using Angular 17 and TypeScript, integrating RxJS and modular component patterns to drive UI performance optimization.",
+        "Designed and deployed secure RESTful and GraphQL APIs integrated with Azure Active Directory (Azure AD), OAuth2, and JWT authentication flows guarded by OWASP secure coding standards.",
+        "Configured and managed Azure cloud infrastructure including Azure App Service, Azure Functions, and Azure Key Vault for enterprise secret management and data protection.",
+        "Engineered automated CI/CD deployment pipelines using Azure DevOps and GitHub Actions, orchestrating containerized workloads via Docker and Kubernetes (AKS).",
+        "Enforced strict engineering quality by conducting comprehensive code reviews, writing technical architecture documentation, and driving Agile sprint releases through production deployment and hypercare."
       ]
     },
     {
-      "title": "Full Stack Developer",
+      "title": "Full Stack / Backend Developer",
       "company": "Tallect, Bengaluru",
       "date": "July 2023 — January 2025",
       "bullets": [
-        "Developed and scaled cloud-native microservices on AWS and Azure platforms using TypeScript, Node.js, and Python (FastAPI), implementing resilient System Design principles.",
-        "Integrated production-grade Large Language Models (LLM) and customized Retrieval-Augmented Generation (RAG) pipelines into backend architectures, scaling performance across MongoDB and NoSQL data clusters.",
-        "Built automated CI/CD pipelines and managed stable application environments utilizing Docker containerization to accelerate delivery speed and overall execution reliability.",
-        "Designed and maintained user-facing frontend components using React and Angular, profiling network assets via Chrome DevTools to optimize client-side functionality and speed.",
-        "Collaborated within cross-functional Agile structures, tracking repository commits through Git independently while managing daily technical alignment across project components."
+        "Engineered scalable microservices and REST APIs using Python (FastAPI) and TypeScript, implementing complex business logic and high-throughput data processing workflows.",
+        "Built robust SPAs with Angular 16 and React.js, leveraging centralized state management (Redux / RxJS) to streamline real-time data binding and client-side performance.",
+        "Architected relational database layers on Azure SQL and PostgreSQL, utilizing Prisma and TypeORM while managing unstructured assets with Azure Blob Storage.",
+        "Implemented enterprise-grade security protocols across microservices, leveraging Azure Key Vault, OAuth2 access tokens, and programmatic RBAC structures.",
+        "Streamlined production releases by building multi-stage Docker container images and managing deployments across Azure Kubernetes Service (AKS) and AWS clusters.",
+        "Collaborated with cross-functional product stakeholders to translate business mandates into technical solutions, driving hypercare support and debugged complex production incidents."
       ]
     },
     {
@@ -99,11 +116,11 @@ export const resumeData = {
       "company": "Akal Information Systems, Delhi",
       "date": "August 2021 — July 2023",
       "bullets": [
-        "Built full-stack web applications using React, Angular, Node.js (NestJS), and Python, delivering robust software features under strict Agile timelines.",
-        "Designed relational database schemas using PostgreSQL, ensuring optimal transactional integrity, clean data indexing strategies, and efficient query layouts.",
-        "Oversaw multi-branch Git development lifecycles, setting up simple CI/CD pipelines and utilizing Docker to build consistent running environments for software verification workflows.",
-        "Utilized Chrome DevTools to diagnose rendering performance, handle client-side exceptions, and profile web pages to achieve highly responsive layouts.",
-        "Nurtured solid Client Relationship practices by interpreting user requests, aligning delivery pipelines, and maintaining communication during iterative application deployments."
+        "Developed full-stack enterprise web applications using Python and Node.js backend services coupled with Angular and HTML5/Sass frontends under strict Agile timelines.",
+        "Designed normalized schemas for PostgreSQL and MySQL databases, tuning index strategies and query execution paths to minimize runtime latencies.",
+        "Integrated third-party REST and GraphQL endpoints while enforcing secure access control lists (ACLs) and state verification mechanisms.",
+        "Established baseline CI/CD pipeline automation and Dockerized local environment setups to ensure reproducible builds across development and testing teams.",
+        "Actively participated in daily Agile standups, code review cycles, production deployment support, and operational bug triage."
       ]
     }
   ],
@@ -113,9 +130,9 @@ export const resumeData = {
       "company": "Mumbai First, Delhi",
       "date": "August 2020 — November 2020",
       "bullets": [
-        "Translated visual layout specifications and UI/UX concepts into responsive, browser-optimized web modules using JavaScript and clean styling rules.",
-        "Maintained stable code versions using Git to coordinate daily code changes smoothly across development branch layers.",
-        "Leveraged Chrome DevTools to profile page layouts, optimize network asset rendering speeds, and debug client-side script performance."
+        "Translated visual mockups into responsive SPA components using Angular, TypeScript, HTML5, and Sass.",
+        "Structured client-side state models using Redux and RxJS observables to optimize UI rendering performance.",
+        "Utilized Git multi-branch workflows to maintain code quality across active development sprints."
       ]
     },
     {
@@ -123,9 +140,8 @@ export const resumeData = {
       "company": "Believable, Delhi",
       "date": "March 2021 — April 2021",
       "bullets": [
-        "Architected modular and decoupled frontend logic modules under structured System Design patterns to support rapid feature updates.",
-        "Optimized client-side rendering loops and state management schemas to minimize compute latency and maximize operational smoothness.",
-        "Utilized Git for code branching management, collaborating within iterative development blocks to convert functional criteria into modular layout scripts."
+        "Architected decoupled, reusable UI modules in Angular and TypeScript following modern design patterns.",
+        "Optimized browser rendering loops and reduced execution latency across complex client-side applications."
       ]
     }
   ],
